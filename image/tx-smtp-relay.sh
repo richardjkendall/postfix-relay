@@ -9,6 +9,7 @@ TX_SMTP_RELAY_PASSWORD=${TX_SMTP_RELAY_PASSWORD?Missing env var TX_SMTP_RELAY_PA
 # handle sasl
 echo "${TX_SMTP_RELAY_HOST} ${TX_SMTP_RELAY_USERNAME}:${TX_SMTP_RELAY_PASSWORD}" > /etc/postfix/sasl_passwd || exit 1
 postmap /etc/postfix/sasl_passwd || exit 1
+rm /etc/postfix/sasl_passwd || exit 1
 
 postconf 'smtp_sasl_auth_enable = yes' || exit 1
 postconf 'smtp_sasl_password_maps = lmdb:/etc/postfix/sasl_passwd' || exit 1
