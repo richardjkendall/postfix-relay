@@ -1,7 +1,6 @@
-FROM alpine:3.4
-MAINTAINER Chris Dornsife <chris@applariat.com>
+FROM alpine:latest
 
-RUN apk add --no-cache postfix rsyslog supervisor \
+RUN apk add --no-cache postfix cyrus-sasl-login rsyslog supervisor \
     && /usr/bin/newaliases
 
 COPY . /
