@@ -31,4 +31,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: build and push image
         run: |
-          docker buildx build --platform linux/arm64 -t docker.richardjameskendall.com/smtp -f Dockerfile . --push
+          docker buildx build --platform linux/arm64,linux/amd64 -t docker.richardjameskendall.com/smtp -f Dockerfile . --push
