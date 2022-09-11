@@ -1,5 +1,7 @@
 # postfix-relay
 A SMTP relay host for transactional based emails from within a k8 cluster.
+
+Has amd64 and arm64 images.
  
 ## Overview
 This repository contains Kubernetes config files and a docker image to easily set up a SMTP relay for services such as SendGrid.
